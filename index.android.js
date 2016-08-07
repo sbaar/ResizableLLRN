@@ -33,7 +33,7 @@ class MakeMojiReactNative extends Component {
         <MakeMojiTextInput style={styles.moji} onSendPressed={this.log} horizontal={true}/>
 
           <Text style={styles.instructions}>
-              below
+              below2
           </Text>
       </View>
     );
@@ -75,8 +75,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   moji:{
-    flex:1,
-    height:300,
+    height:100,
     alignSelf: 'stretch',
   }
 });

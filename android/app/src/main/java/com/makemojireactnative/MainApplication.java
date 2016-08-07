@@ -8,7 +8,6 @@ import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
-import com.makemoji.mojilib.Moji;
 
 import java.util.Arrays;
 import java.util.List;
@@ -53,6 +52,5 @@ public class MainApplication extends Application implements ReactApplication {
             .build();
     OkHttpClientProvider.replaceOkHttpClient(client);
 
-    Moji.initialize(this,"bfd3eea60abad87d378f87939ef3a116e8b23a35");
   }
 }
