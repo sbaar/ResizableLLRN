@@ -27,6 +27,8 @@ public class ReactMojiInputLayout extends SimpleViewManager<ResizeableLL> {
     @Override
     protected ResizeableLL createViewInstance(final ThemedReactContext reactContext) {
         final ResizeableLL mojiInputLayout = new ResizeableLL(reactContext);
+        mojiInputLayout.setFocusable(true);
+        mojiInputLayout.setFocusableInTouchMode(true);
         Log.d(getName(),"createviewinstance");
         return mojiInputLayout;
     }

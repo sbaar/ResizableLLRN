@@ -10,7 +10,8 @@ import {
   StyleSheet,
   Text,
   View,
-  ViewPagerAndroid
+  ViewPagerAndroid,
+  TouchableNativeFeedback
 } from 'react-native';
 import MakeMojiTextInput from './MakeMojiRN/MakeMojiTextInput'
 import TimerMixin from 'react-timer-mixin';
@@ -19,8 +20,8 @@ class MakeMojiReactNative extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
+      <View style={styles.container} onPress={this.log}>
+        <Text style={styles.welcome} onPress={() =>this.log('text')}>
           Welcome to React Native!
         </Text>
         <Text style={styles.instructions}>
@@ -33,13 +34,13 @@ class MakeMojiReactNative extends Component {
         <MakeMojiTextInput style={styles.moji} onSendPressed={this.log} horizontal={true}/>
 
           <Text style={styles.instructions}>
-              below2
+              below4
           </Text>
       </View>
     );
   }
   log(s){
-    console.log("logging s");
+    console.log("logging s"+s);
   }
   componentDidMount(){
     //this.animationTimeout();

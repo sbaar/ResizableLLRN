@@ -39,6 +39,7 @@ public class ResizeableLL  extends LinearLayout implements View.OnTouchListener{
         init();
     }
     void init(){
+        Log.d(VIEW_LOG_TAG,"init");
         setOrientation(HORIZONTAL);
         inflate(getContext(), R.layout.resizable,this);
 
@@ -50,8 +51,8 @@ public class ResizeableLL  extends LinearLayout implements View.OnTouchListener{
         ViewConfiguration vc = ViewConfiguration.get(getContext());
         mTouchSlop = vc.getScaledTouchSlop();
         setPrimaryContentWidth(150);
+        setOnTouchListener(this);
     }
-
 
 
 
@@ -82,7 +83,6 @@ public class ResizeableLL  extends LinearLayout implements View.OnTouchListener{
     public void onFinishInflate(){
         super.onFinishInflate();
         //leftView.setOnTouchListener(this);
-        setOnTouchListener(this);
 
       //  flashButton = (ImageView) findViewById(R.id._mm_flashtag_button);
 
@@ -209,6 +209,8 @@ public class ResizeableLL  extends LinearLayout implements View.OnTouchListener{
         //Log.d("ll","width " + newWidth);
         lp.width=newWidth;
         leftView.setLayoutParams(lp);
+        leftView.requestLayout();
+        Log.d(VIEW_LOG_TAG,"requestLayout");
 
         //change snap affinity when the open or close is done.
         if (maxSize == newWidth)

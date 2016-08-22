@@ -21,7 +21,7 @@ class MakeMojiTextInput extends React.Component {
     this.props.onCameraPressed(event.nativeEvent.message);
 }
     render() {
-        return <RCTMojiInputLayout {...this.props} onSendPressed={this._onSendPressed} onCameraPressed={this._onCameraPressed} />;
+        return <RCTMojiInputLayout onPress={()=>console.log("mil onPress")} {...this.props} onSendPressed={this._onSendPressed} onCameraPressed={this._onCameraPressed} />;
     }
     shouldComponentUpdate(nextProps,nextState){
         return true;
